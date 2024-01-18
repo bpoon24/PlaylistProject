@@ -56,17 +56,24 @@ public class Playlist {
         }
     }
 
-    public int getTotalDuration(){
+    public String getTotalDuration(){
         int totalDuration = 0;
 
         for(int i = 0; i < p.size(); i++){
             totalDuration += p.get(i).getDuration();
         }
 
-        return totalDuration;
+        return "Total Duration: " + totalDuration / 60 + ":" + totalDuration % 60;
     }
 
-    
+    public void removeUnlikedSongs(){
+        for(int i = 0; i < p.size(); i++){
+            if(!p.get(i).getIsLiked()){
+                p.remove(i);
+                i--;
+            }
+        }
+    }
 
 
 }
