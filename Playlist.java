@@ -39,4 +39,34 @@ public class Playlist {
     public void removeSong(int pos) {
         p.remove(pos);
     }
+
+    public void examineSongs(){
+        for(int i = 0; i < p.size(); i++){
+            System.out.println(p.get(i).toString());
+            System.out.println();
+        }
+    }
+
+    public void examineLikedSongs(){
+        for(int i = 0; i < p.size(); i++){
+            if(p.get(i).getIsLiked()){
+                System.out.println(p.get(i).toString());
+                System.out.println();
+            }
+        }
+    }
+
+    public int getTotalDuration(){
+        int totalDuration = 0;
+
+        for(int i = 0; i < p.size(); i++){
+            totalDuration += p.get(i).getDuration();
+        }
+
+        return totalDuration;
+    }
+
+    
+
+
 }
